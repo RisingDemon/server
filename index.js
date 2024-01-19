@@ -17,7 +17,7 @@ app.listen(port, () => {
   console.log("listning at port 5000........");
 });
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
 });
 
 // api
