@@ -43,6 +43,10 @@ const runFun = async (request, res) => {
   const reqBody = JSON.parse(request.body.body);
   let prompt = reqBody.prompt;
   console.log(prompt);
+  // if prompt is empty then return
+  if (prompt === "") {
+    return;
+  }
 
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
