@@ -42,12 +42,11 @@ const runFun = async (request, res) => {
   console.log(request.body);
   const reqBody = JSON.parse(request.body.body);
   let prompt = reqBody.prompt;
-  if(prompt === undefined){
+  console.log(prompt);
+  if(prompt===""){
+    console.log("reqBody is NaN");
     return;
   }
-  console.log(prompt);
-  // if prompt is empty then return
-
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
