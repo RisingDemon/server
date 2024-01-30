@@ -51,7 +51,7 @@ const runFun = async (request, res) => {
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
     temperature: 1,
-    max_tokens: 64,
+    max_tokens: 200,
     n: 1,
     top_p: 1,
     presence_penalty: 0,
